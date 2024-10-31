@@ -1,6 +1,6 @@
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
-import java.net.Inet4Address;
+import java.net.InetAddress;
 import java.net.SocketException;
 import java.util.logging.Level;
 import java.io.IOException;
@@ -20,7 +20,7 @@ public static void main(String[] args) {
         String mensaje = new String(paquete.getData());
         System.out.println("Mensaje recibido: " + mensaje);
         int puertoCliente = paquete.getPort();//verificar el puerto del cliente
-        Inet4Address ipCliente=(Inet4Address) paquete.getAddress();//verificar la ip del cliente
+        InetAddress ipCliente=(InetAddress) paquete.getAddress();//verificar la ip del cliente
         //creacion paeute de respuesta
         String mensRespuesta = "Hola cliente, soy el servidor";
         buffer = mensRespuesta.getBytes();
